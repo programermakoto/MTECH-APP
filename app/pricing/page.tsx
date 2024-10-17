@@ -1,10 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { createServerComponentClient, SupabaseClient } from "@supabase/auth-helpers-nextjs";
+import { SupabaseClient } from "@supabase/auth-helpers-nextjs";
 import initStripe, { Stripe } from "stripe";
 import { Database } from "@/lib/database.types";
 import SubscriptionButton from "@/components/checkout/SubscriptionButton";
-import { promises } from "dns";
 import Link from "next/link";
 import { supabaseServer } from "@/utils/supabaseServer";
 

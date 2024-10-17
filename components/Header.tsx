@@ -2,9 +2,6 @@ import Link from "next/link";
 import React from "react";
 import { Button } from "./ui/button";
 import AuthServerButton from "./auth/AuthServerButton";
-import { createServer } from "http";
-import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
-
 import { supabaseServer } from "@/utils/supabaseServer";
 
 const Header = async () => {

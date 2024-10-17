@@ -76,10 +76,13 @@ export async function POST(req: NextRequest) {
         }
         console.log(event);
         return NextResponse.json({ received: true });
-    } catch (err: any) {
-
-        return NextResponse.json(`Webhook Error: ${err.message}`, { status: 401 });
+    } catch (err: unknown) {
+        if (err instanceof Error) {
+            return NextResponse.json(`Webhook Error: ${err.message}`, { status: 401 });
+        }
+        return NextResponse.json(`Webhook Error: Unknown error`, { status: 401 });
     }
+    
 
 
 }
