@@ -9,7 +9,8 @@ const SubscriptionButton = ({ planId }: { planId: string }) => {
         const data = await response.json();
         const stripe = await loadStripe(process.env.NEXT_PUBLIC_STRIPE_KEY!);
         await stripe?.redirectToCheckout({ sessionId: data.id });
-
+        const json = await response.json();
+        console.log(json);
     };
 
     return (
@@ -19,7 +20,7 @@ const SubscriptionButton = ({ planId }: { planId: string }) => {
     );
 };
 
-
-
-
 export default SubscriptionButton;
+
+
+

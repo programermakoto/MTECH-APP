@@ -11,6 +11,7 @@ const SubscriptionManagementButton = () => {
         try {
             const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/portal`); // 相対パスを使う
             const data = await response.json();
+
             router.push(data.url); // URLに遷移
         } catch (error) {
             console.error("Error loading the portal:", error);
