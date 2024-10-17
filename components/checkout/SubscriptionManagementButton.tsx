@@ -8,22 +8,17 @@ const SubscriptionManagementButton = () => {
     const router = useRouter(); // useRouterを使用
 
     const loadPortal = async () => {
-        try {
-            const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/portal`); // 相対パスを使う
-            const data = await response.json();
+            const response = await fetch("process.env.http://localhost:3000/api/portal"); // 相対パスを使う
 
-            router.push(data.url); // URLに遷移
-        } catch (error) {
-            console.error("Error loading the portal:", error);
-            alert("エラーが発生しました。詳細を確認してください。");
-        }
+            const data = await response.json();
+            router.push(data.url);
+        };
+
+        return (
+            <div>
+                <Button onClick={loadPortal}>契約管理</Button>
+            </div>
+        );
     };
 
-    return (
-        <div>
-            <Button onClick={loadPortal}>サブスクリプション管理</Button>
-        </div>
-    );
-};
-
-export default SubscriptionManagementButton;
+    export default SubscriptionManagementButton;
