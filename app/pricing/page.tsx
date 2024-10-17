@@ -6,6 +6,7 @@ import { Database } from "@/lib/database.types";
 import SubscriptionButton from "@/components/checkout/SubscriptionButton";
 import Link from "next/link";
 import { supabaseServer } from "@/utils/supabaseServer";
+import AuthServerButton from "@/components/auth/AuthServerButton";
 
 
 interface Plan {
@@ -73,7 +74,7 @@ const PricingPage = async () => {
                     <CardContent>{plan.price}円 / {plan.interval}</CardContent>
                     <CardFooter>
                         {showSubscribeButton && <SubscriptionButton planId={plan.id} />}
-                        {showCreateAccountButton && <Button>ログインする</Button>}
+                        {showCreateAccountButton && <AuthServerButton />}
                         {showManageSubscriptionButton &&
                             
                                 <Button><Link href="/dashboard">
