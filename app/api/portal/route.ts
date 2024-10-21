@@ -27,7 +27,6 @@ import { supabaseRouteHandlerClient } from "@/utils/supabaseRouteHandlerCliient"
 //     });
 // }
 
-
 export async function GET(
     _req: NextRequest,
     { params }: { params: { priceId: string } }
@@ -50,8 +49,8 @@ export async function GET(
         return NextResponse.json({ error: "Invalid customer data" }, { status: 400 });
     }
 
-    const priceId = params.priceId; // priceIdを取得
-    console.log("Price ID:", priceId); // ここでpriceIdをログ出力
+    const priceId = params.priceId;
+    console.log("Price ID:", priceId); // priceIdをログ出力
 
     const stripe = new initStripe(process.env.STRIPE_SECRET_KEY!);
 
@@ -71,11 +70,15 @@ export async function GET(
         return NextResponse.json({
             id: session.id
         });
-    }catch (error) {
+    } catch (error) {
         console.error("Error creating Stripe session:", error);
-        // ここで詳細なエラーメッセージを表示する
+        
+        // ここでエラーの詳細をログ出力する
         console.error("Error details:", JSON.stringify(error, null, 2));
-        return NextResponse.json({ error: (error instanceof Error ? error.message : "Failed to create session!!!!!!") }, { status: 500 });
+
+        return NextResponse.json(
+            { error: (error instanceof Error ? error.message : "Failed to create session") }, 
+            { status: 500 }
+        );
     }
-    
 }
