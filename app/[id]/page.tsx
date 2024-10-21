@@ -48,7 +48,7 @@ const LessonDetailPage = async ({ params }: { params: { id: number } }) => {
             {videoId ? (
                 <YouTubeEmbed height={400} videoid={videoId} />
             ) : (
-                <p>No video available.</p>
+                <p className="text-2xl text-center  p-3 w-40 mx-auto">動画更新中</p>
             )}
         </div>
     );

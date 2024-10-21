@@ -8,9 +8,10 @@ const SubscriptionManagementButton = () => {
     const router = useRouter(); // useRouterを使用
 
     const loadPortal = async () => {
-            const response = await fetch("process.env.http://localhost:3000/api/portal"); // 相対パスを使う
+            const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/portal`); // 相対パスを使う
 
             const data = await response.json();
+            
             router.push(data.url);
         };
 

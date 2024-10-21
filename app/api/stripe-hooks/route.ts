@@ -57,13 +57,6 @@ export async function POST(req: NextRequest) {
                 }
 
 
-
-
-
-
-
-
-
             case 'customer.subscription.deleted':
                 await supabase
                     .from("profile")
@@ -82,7 +75,7 @@ export async function POST(req: NextRequest) {
         }
         return NextResponse.json(`Webhook Error: Unknown error`, { status: 401 });
     }
-    
+
 
 
 }

@@ -6,7 +6,7 @@ import { Button } from "../ui/button";
 const SubscriptionButton = ({ planId }: { planId: string }) => {
     const processSubscription = async () => {
         const response = await fetch(
-            `http://localhost:3000/api/subscription/${planId}`);
+            `${process.env.NEXT_PUBLIC_BASE_URL}/api/subscription/${planId}`);
 
         const data = await response.json();
         const stripe = await loadStripe(process.env.NEXT_PUBLIC_STRIPE_KEY!);
@@ -25,3 +25,4 @@ const SubscriptionButton = ({ planId }: { planId: string }) => {
 
 
 export default SubscriptionButton;
+

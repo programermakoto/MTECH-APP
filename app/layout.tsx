@@ -18,7 +18,7 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   title: "Mテック講座販売アプリケーション",
   description: "プログラミング動画を販売するアプリケーションになります",
-  keywords:"Mtech  Mテック プログラミング 寺内誠将 てらうちまこと",
+  keywords:"Mtech  Mテック プログラミング 寺内誠将 てらうちまこと KANOA",
 };
 
 export default function RootLayout({
