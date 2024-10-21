@@ -36,7 +36,7 @@ export async function GET(
     const user = data.user;
 
     if (!user) {
-        return NextResponse.json("Unauthorized", { status: 401 });
+        return NextResponse.json("Unauthorized!!!!!!!", { status: 401 });
     }
 
     const { data: stripe_customer_data } = await supabase
@@ -46,7 +46,7 @@ export async function GET(
         .single();
 
     if (!stripe_customer_data || !stripe_customer_data.stripe_customer) {
-        return NextResponse.json({ error: "Invalid customer data" }, { status: 400 });
+        return NextResponse.json({ error: "Invalid customer data!!!!!!!!!!" }, { status: 400 });
     }
 
     const priceId = params.priceId;
