@@ -4,7 +4,7 @@ import { supabaseRouteHandlerClient } from "@/utils/supabaseRouteHandlerCliient"
 
 
 export async function POST(req: NextRequest) {
-    const supabase =supabaseRouteHandlerClient()
+    const supabase =supabaseRouteHandlerClient();
     const query = req.nextUrl.searchParams.get("API_ROUTE_SECRET");
     if(query !==process.env.API_ROUTE_SECRET){
         return NextResponse.json({
