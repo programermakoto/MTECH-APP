@@ -73,12 +73,9 @@ export async function GET(
         });
     }catch (error) {
         console.error("Error creating Stripe session:", error);
-    
-        if (error instanceof Error) {
-            return NextResponse.json({ error: error.message || "Failed to create session" }, { status: 500 });
-        } else {
-            return NextResponse.json({ error: "Unknown error occurred" }, { status: 500 });
-        }
+        // ここで詳細なエラーメッセージを表示する
+        console.error("Error details:", JSON.stringify(error, null, 2));
+        return NextResponse.json({ error: (error instanceof Error ? error.message : "Failed to create session!!!!!!") }, { status: 500 });
     }
-
+    
 }
