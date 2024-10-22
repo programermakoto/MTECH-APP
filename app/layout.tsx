@@ -18,7 +18,11 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   title: "Mテック講座販売アプリケーション",
   description: "プログラミング動画を販売するアプリケーションになります",
-  keywords:"Mtech  Mテック プログラミング 寺内誠将 てらうちまこと KANOA",
+  keywords:"Mtech  Mテック プログラミング 寺内誠将 てらうちまこと KANOA プログラミング かのあ カノア エンジニア Mtech  KANOA Group",
+  icons: {
+    icon: "/favicon.ico", // ファビコンを指定（通常.ico形式）
+    apple: "/mtech.jpg", // Appleデバイス用にmtech.jpgを指定
+  },
 };
 
 export default function RootLayout({
