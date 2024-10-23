@@ -38,8 +38,8 @@ export async function GET(req: NextRequest) {
     const supabase = supabaseRouteHandlerClient();
     
     // アクセストークンをログ出力
-    const accessToken = req.headers.get("Authorization")?.replace("Bearer ", "");
-    console.log("Access Token:", accessToken); // ここでアクセストークンを確認
+    // const accessToken = req.headers.get("Authorization")?.replace("Bearer ", "");
+    // console.log("Access Token:", accessToken); // ここでアクセストークンを確認
 
     // ユーザー情報を取得
     const { data } = await supabase.auth.getUser();
