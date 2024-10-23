@@ -4,6 +4,9 @@ import { supabaseRouteHandlerClient } from "@/utils/supabaseRouteHandlerCliient"
 
 export async function GET(req: NextRequest) {
     const supabase =supabaseRouteHandlerClient();
+        // アクセストークンをログ出力
+        const accessToken = req.headers.get("Authorization")?.replace("Bearer ", "");
+        console.log("Access Token:", accessToken); // ここでアクセストークンを確認
     const { data } = await supabase.auth.getUser();
     const user = data.user;
 
