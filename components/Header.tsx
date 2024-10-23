@@ -19,13 +19,10 @@ const {data: user }= await supabase.auth.getSession();
             </Link>
             )}
             <Link href="/pricing" className="ml-4">
-                <Button variant="outline">価格プラン</Button>
+                <Button variant="outline">コース一覧</Button>
             </Link>
             <Link href="https://mtech-it.com" className="ml-4">
                 <Button variant="outline">Mtechコミュニティー</Button>
-            </Link>
-            <Link href="https://line.me/R/ti/p/@527qtybu?oat_content=url&ts=08060343" className="ml-4">
-                <Button variant="outline">問い合わせ</Button>
             </Link>
             <div className="ml-auto">
                 <AuthServerButton />
