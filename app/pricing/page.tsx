@@ -104,4 +104,5 @@ shadow-lg hover:shadow-2xl transition-transform transform hover:-translate-y-2 b
     );
 };
 
+
 export default PricingPage;
