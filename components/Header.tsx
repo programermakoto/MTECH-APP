@@ -35,9 +35,8 @@
 
 
 "use client"; // クライアントコンポーネントに変換
-
-import Link from "next/link";
 import React, { useState } from "react";
+import Link from "next/link";
 import { Button } from "./ui/button";
 import AuthServerButton from "./auth/AuthServerButton";
 import { supabaseServer } from "@/utils/supabaseServer";
