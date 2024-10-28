@@ -23,14 +23,16 @@ const Dashboard = async () => {
             <div>
                 <div className="mb-5">
                     {profile?.is_subscribed
-                        ? `プラン契約中です。:${profile.interval}`
+                        ? `プラン契約中です。: ${profile.interval} プラン`
                         : "プラン未加入です。"}
                 </div>
+                <p className="text-center p-6 bg-white rounded-lg shadow-lg">
+                    公式ラインお問い合わせは<a href="https://line.me/R/ti/p/@527qtybu?oat_content=url&ts=08060343">こちら</a>から
+                </p>
+                <p className="text-center p-6 bg-white rounded-lg shadow-lg">またオフラインコミュニティーの場も設けてますのでSE同士の繋がりもあるので詳しくは<a className="bg-gray-200 text-red-500 p-2 " href="https://mtech-it.com">Mtechホームページ</a></p>
                 <SubscriptionManagementButton />
             </div>
-            <p>
-                <a href="https://line.me/R/ti/p/@527qtybu?oat_content=url&ts=08060343">公式ラインお問い合わせ</a>
-            </p>
+
 
         </div>
     );
