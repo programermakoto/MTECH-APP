@@ -64,15 +64,17 @@ const PricingPage = async () => {
     const showCreateAccountButton = !user.session;
     const showManageSubscriptionButton = !!user.session && profile?.is_subscribed;
     return (
-        <div className="w-full max-w-3xl  mx-auto py-16 flex justify-around space-x-8">
-            {plans.map((plan) => (
-                <Card className="
-shadow-lg hover:shadow-2xl transition-transform transform hover:-translate-y-2 bg-white rounded-lg text-center p-6" key={plan.id}>
-                    <CardHeader>
-                        <CardTitle>{plan.name}プラン 会員</CardTitle>
-                        <CardDescription>{plan.name}</CardDescription>
-                    </CardHeader>
-                    <CardContent>{plan.price}円 / {plan.interval}<br />
+        <div className="w-full max-w-3xl mx-auto py-16 flex flex-col sm:flex-row sm:space-x-8">
+        {plans.map((plan) => (
+            <Card className="
+                shadow-lg hover:shadow-2xl transition-transform transform hover:-translate-y-2 bg-white rounded-lg text-center p-6 mb-4 sm:mb-0" 
+                key={plan.id}>
+                <CardHeader>
+                    <CardTitle>{plan.name}プラン 会員</CardTitle>
+                    <CardDescription>{plan.name}</CardDescription>
+                </CardHeader>
+                <CardContent>
+                    {plan.price}円 / {plan.interval}<br />
                     <h3 className="text-lg font-semibold mt-4">Mtech会員限定サービス</h3>
                     <div className="text-gray-700 text-sm leading-relaxed mt-2">
                         <ul className="list-disc text-left">
@@ -84,23 +86,22 @@ shadow-lg hover:shadow-2xl transition-transform transform hover:-translate-y-2 b
                             <li>公式ラインでの質問サポート</li>
                         </ul>
                     </div>
-                    </CardContent>
-                    <CardFooter className="flex justify-center items-center space-x-4 w-full">
-                        {showSubscribeButton && <SubscriptionButton planId={plan.id} />}
-                        {showCreateAccountButton && <AuthServerButton />}
-                        {showManageSubscriptionButton &&
-                            
-                                <Button><Link href="/dashboard">
+                </CardContent>
+                <CardFooter className="flex justify-center items-center space-x-4 w-full">
+                    {showSubscribeButton && <SubscriptionButton planId={plan.id} />}
+                    {showCreateAccountButton && <AuthServerButton />}
+                    {showManageSubscriptionButton && (
+                        <Button>
+                            <Link href="/dashboard">
                                 サブスクリプション管理
-                            </Link></Button>
-
-                           }
-
-                    </CardFooter>
-
-                </Card>
-            ))}
-        </div>
+                            </Link>
+                        </Button>
+                    )}
+                </CardFooter>
+            </Card>
+        ))}
+    </div>
+    
     );
 };
 
