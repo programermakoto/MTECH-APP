@@ -14,27 +14,26 @@ export default async function Home() {
   const lessons = await getAllLessons(supabase);
 
   return (
-    <main className="w-full max-w-7xl mx-auto my-16 ">
+    <main className="w-full max-w-7xl mx-auto my-16">
       <div className="w-full flex flex-wrap gap-2">
-  {lessons?.map((Lesson) => (
-    <Link
-      href={`/${Lesson.id}`}
-      key={Lesson.id}
-      className="w-full sm:w-1/3"
-      style={{ flex: '1 0 100%', maxWidth: '100%' }} // スマホサイズでカードが画面全体の幅を使用
-    >
-      <Card className="w-full bg-gray-200" style={{ minHeight: '30vh' }}>
-        <CardHeader>
-          <CardTitle>{Lesson.title}</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <p>{Lesson.description}</p>
-        </CardContent>
-      </Card>
-    </Link>
-  ))}
-</div>
-
+        {lessons?.map((Lesson) => (
+          <Link
+            href={`/${Lesson.id}`}
+            key={Lesson.id}
+            className="w-full sm:w-1/2 md:w-1/3"
+            style={{ flex: "1 0 auto" }} // Flex設定でレスポンシブ調整
+          >
+            <Card className="w-full bg-gray-200" style={{ minHeight: "30vh" }}>
+              <CardHeader>
+                <CardTitle>{Lesson.title}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p>{Lesson.description}</p>
+              </CardContent>
+            </Card>
+          </Link>
+        ))}
+      </div>
     </main>
   );
 }
