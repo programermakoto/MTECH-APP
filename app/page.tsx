@@ -23,7 +23,7 @@ export default async function Home() {
             className="w-full sm:w-1/2 md:w-1/3"
             style={{ flex: '0 0 calc(33.333% - 0.5rem)' }}
           >
-            <Card className="w-full bg-gray-200" style={{ minHeight: '30vh' }}>
+            <Card className="w-full sm:w-1/2 md:w-1/3 bg-gray-200" style={{ minHeight: '30vh' }}>
               <CardHeader>
                 <CardTitle>{Lesson.title}</CardTitle>
               </CardHeader>
