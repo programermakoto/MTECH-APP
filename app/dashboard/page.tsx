@@ -26,10 +26,11 @@ const Dashboard = async () => {
                         ? `プラン契約中です。: ${profile.interval} プラン`
                         : "プラン未加入です。"}
                 </div>
-                <p className="text-center p-6 bg-white rounded-lg mb-6 shadow-lg">
+                <p className="text-center p-3 bg-white rounded-lg mb-6 shadow-lg">
                     公式ラインお問い合わせは<a href="https://line.me/R/ti/p/@527qtybu?oat_content=url&ts=08060343" className="text-red-500">こちら</a>から
+                    <SubscriptionManagementButton />
                 </p>
-                <SubscriptionManagementButton />
+                
             </div>
 
 
