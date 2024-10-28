@@ -18,7 +18,7 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
   title: "MTech",
-  description: "プログラミング動画を販売するアプリケーションになります",
+  description: "Mtech 動画販売アプリケーション",
   keywords: "Mtech Mテック プログラミング 寺内誠将 てらうちまこと KANOA",
   icons: {
     icon: "/favicon.ico", // 絶対パス

@@ -22,7 +22,7 @@ export default async function Home() {
     <main className="w-full max-w-7xl mx-auto my-16 ">
       <div className="w-full flex flex-wrap gap-2">
         {lessons?.map((Lesson) => (
-          <Link href={`/${Lesson.id}`} key={Lesson.id} className="w-1/3" style={{ flex: '0 0 calc(33.333% - 0.5rem)' }}> {/* 1/3の幅でカードを表示 */}
+          <Link href={`/${Lesson.id}`} key={Lesson.id} className="w-full sm:w-1/2 md:w-1/3" style={{ flex: '0 0 calc(100% - 0.5rem)' }}> {/* 1/3の幅でカードを表示 */}
             <Card className="w-full bg-gray-200" style={{ minHeight: '30vh' }}> {/* カードの幅を100%に設定 */}
               <CardHeader>
                 <CardTitle>{Lesson.title}</CardTitle>
