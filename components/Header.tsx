@@ -33,6 +33,9 @@
 
 // export default Header;
 
+
+"use client"; // クライアントコンポーネントに変換
+
 import Link from "next/link";
 import React, { useState } from "react";
 import { Button } from "./ui/button";
@@ -42,7 +45,7 @@ import { Menu, X } from "react-feather"; // react-featherアイコン
 
 const Header = async () => {
     const [isOpen, setIsOpen] = useState(false); // メニューの開閉状態
-    const supabase = supabaseServer();
+    const supabase = await supabaseServer();
     const { data: user } = await supabase.auth.getSession();
 
     return (
