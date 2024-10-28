@@ -33,27 +33,19 @@
 
 // export default Header;
 
-"use client"; // クライアントコンポーネントに変換
 
-import React, { useState, useEffect } from "react";
+"use client"; // クライアントコンポーネントに変換
+import React, { useState } from "react";
 import Link from "next/link";
 import { Button } from "./ui/button";
 import AuthServerButton from "./auth/AuthServerButton";
-import { supabase } from "@/utils/supabaseClient"; 
+import { supabaseServer } from "@/utils/supabaseServer";
 import { Menu, X } from "react-feather"; // react-featherアイコン
 
-const Header = () => {
+const Header = async () => {
     const [isOpen, setIsOpen] = useState(false); // メニューの開閉状態
-    const [user, setUser] = useState(null);
-
-    useEffect(() => {
-        // クライアントサイドでセッションを取得
-        const fetchUserSession = async () => {
-            const { data } = await supabase.auth.getSession();
-            setUser(data?.session ? data.session.user : null);
-        };
-        fetchUserSession();
-    }, []);
+    const supabase = await supabaseServer();
+    const { data: user } = await supabase.auth.getSession();
 
     return (
         <div className="flex py-4 px-6 border-b border-gray-200">
@@ -72,7 +64,7 @@ const Header = () => {
 
             {/* モバイル時のメニュー表示 */}
             <div className={`flex-col items-start w-full mt-4 sm:hidden ${isOpen ? 'block' : 'hidden'}`}>
-                {user && (
+                {user.session && (
                     <Link href="/dashboard">
                         <Button variant="outline" className="mt-2 w-full">ダッシュボード</Button>
                     </Link>
@@ -90,7 +82,7 @@ const Header = () => {
 
             {/* デスクトップ時のメニュー表示 */}
             <div className="hidden sm:flex sm:ml-4 sm:items-center">
-                {user && (
+                {user.session && (
                     <Link href="/dashboard">
                         <Button variant="outline" className="ml-4">ダッシュボード</Button>
                     </Link>
