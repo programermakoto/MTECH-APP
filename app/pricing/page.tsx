@@ -66,8 +66,7 @@ const PricingPage = async () => {
     return (
 
 
-
-<div className="w-full max-w-3xl mx-auto py-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+<div className="w-full max-w-3xl mx-auto py-16 grid gap-4 grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
     {plans.map((plan) => (
         <Card className="
             shadow-lg hover:shadow-2xl transition-transform transform hover:-translate-y-2 bg-white rounded-lg text-center p-6" 
@@ -104,6 +103,7 @@ const PricingPage = async () => {
         </Card>
     ))}
 </div>
+
 
 
 
