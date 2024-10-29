@@ -64,11 +64,10 @@ const PricingPage = async () => {
     const showCreateAccountButton = !user.session;
     const showManageSubscriptionButton = !!user.session && profile?.is_subscribed;
     return (
-
-<div className="w-full max-w-3xl mx-auto py-16 flex flex-wrap justify-center gap-4">
+<div className="w-full max-w-3xl mx-auto py-16 flex flex-col sm:flex-row sm:flex-wrap gap-4">
     {plans.map((plan) => (
         <Card className="
-            shadow-lg hover:shadow-2xl transition-transform transform hover:-translate-y-2 bg-white rounded-lg text-center p-6 sm:flex sm:flex-col" 
+            shadow-lg hover:shadow-2xl transition-transform transform hover:-translate-y-2 bg-white rounded-lg text-center p-6 w-full sm:w-1/2" 
             key={plan.id}>
             <CardHeader>
                 <CardTitle>{plan.name}プラン 会員</CardTitle>
@@ -102,6 +101,7 @@ const PricingPage = async () => {
         </Card>
     ))}
 </div>
+
 
 
     
