@@ -66,7 +66,7 @@ const PricingPage = async () => {
     return (
 
 
-<div className="w-full max-w-3xl mx-auto py-16 grid gap-4 grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1">
+<div className="flex flex-wrap sm:flex-nowrap py-4 px-6 border-b border-gray-200">
     {plans.map((plan) => (
         <Card
             className="border border-gray-300 shadow-lg hover:shadow-2xl transition-transform transform hover:-translate-y-2 bg-white rounded-lg text-center p-6"
