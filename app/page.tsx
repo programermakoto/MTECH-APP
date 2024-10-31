@@ -23,7 +23,7 @@ export default async function Home() {
             className="w-full sm:w-1/2 md:w-1/3"
             style={{ flex: "1 0 auto" }} // Flex設定でレスポンシブ調整
           >
-            <Card className="w-full bg-gray-200" style={{ minHeight: "30vh" }}>
+            <Card className="w-full border border-gray-300 shadow-lg hover:shadow-2xl transition-transform transform hover:-translate-y-2 bg-white rounded-lg text-center p-6 mb-4 md:mb-0" style={{ minHeight: "30vh" }}>
               <CardHeader>
                 <CardTitle>{Lesson.title}</CardTitle>
               </CardHeader>
