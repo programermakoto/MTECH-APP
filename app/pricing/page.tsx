@@ -66,45 +66,45 @@ const PricingPage = async () => {
     return (
 
 
+<div className="w-full max-w-3xl mx-auto py-16 grid gap-4 grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1">
+    {plans.map((plan) => (
+        <Card
+            className="border border-gray-300 shadow-lg hover:shadow-2xl transition-transform transform hover:-translate-y-2 bg-white rounded-lg text-center p-6"
+            key={plan.id}
+        >
+            <CardHeader>
+                <CardTitle>{plan.name}プラン 会員</CardTitle>
+                <CardDescription>{plan.name}</CardDescription>
+            </CardHeader>
+            <CardContent>
+                {plan.price}円 / {plan.interval}<br />
+                <h3 className="text-lg font-semibold mt-4">Mtech会員限定サービス</h3>
+                <div className="text-gray-700 text-sm leading-relaxed mt-2">
+                    <ul className="list-disc text-left">
+                        <li>完全紹介制オフラインコミュニティー</li>
+                        <li>フリーランス案件紹介</li>
+                        <li>転職サポート</li>
+                        <li>フリーランス案件紹介</li>
+                        <li>チーム開発サポート</li>
+                        <li>公式ラインでの質問サポート</li>
+                    </ul>
+                </div>
+            </CardContent>
+            <CardFooter className="flex justify-center items-center space-x-4 w-full">
+                {showSubscribeButton && <SubscriptionButton planId={plan.id} />}
+                {showCreateAccountButton && <AuthServerButton />}
+                {showManageSubscriptionButton && (
+                    <Button>
+                        <Link href="/dashboard">サブスクリプション管理</Link>
+                    </Button>
+                )}
+            </CardFooter>
+        </Card>
+    ))}
+</div>
 
 
-        <div className="w-full max-w-3xl mx-auto py-16 grid gap-4 grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-            {plans.map((plan) => (
-                <Card className="
-            shadow-lg hover:shadow-2xl transition-transform transform hover:-translate-y-2 bg-white rounded-lg text-center p-6"
-                    key={plan.id}>
-                    <CardHeader>
-                        <CardTitle>{plan.name}プラン 会員</CardTitle>
-                        <CardDescription>{plan.name}</CardDescription>
-                    </CardHeader>
-                    <CardContent>
-                        {plan.price}円 / {plan.interval}<br />
-                        <h3 className="text-lg font-semibold mt-4">Mtech会員限定サービス</h3>
-                        <div className="text-gray-700 text-sm leading-relaxed mt-2">
-                            <ul className="list-disc text-left">
-                                <li>完全紹介制オフラインコミュニティー</li>
-                                <li>フリーランス案件紹介</li>
-                                <li>転職サポート</li>
-                                <li>フリーランス案件紹介</li>
-                                <li>チーム開発サポート</li>
-                                <li>公式ラインでの質問サポート</li>
-                            </ul>
-                        </div>
-                    </CardContent>
-                    <CardFooter className="flex justify-center items-center space-x-4 w-full">
-                        {showSubscribeButton && <SubscriptionButton planId={plan.id} />}
-                        {showCreateAccountButton && <AuthServerButton />}
-                        {showManageSubscriptionButton && (
-                            <Button>
-                                <Link href="/dashboard">
-                                    サブスクリプション管理
-                                </Link>
-                            </Button>
-                        )}
-                    </CardFooter>
-                </Card>
-            ))}
-        </div>
+        
     );
 };
 
