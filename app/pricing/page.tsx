@@ -65,11 +65,10 @@ const PricingPage = async () => {
     const showManageSubscriptionButton = !!user.session && profile?.is_subscribed;
     return (
 
-
-<div className="flex flex-wrap sm:flex-nowrap py-4 px-6 border-b border-gray-200">
+<div className="w-full max-w-3xl mx-auto py-16 md:flex md:justify-around md:space-x-8">
     {plans.map((plan) => (
         <Card
-            className="border border-gray-300 shadow-lg hover:shadow-2xl transition-transform transform hover:-translate-y-2 bg-white rounded-lg text-center p-6"
+            className="border border-gray-300 shadow-lg hover:shadow-2xl transition-transform transform hover:-translate-y-2 bg-white rounded-lg text-center p-6 mb-4 md:mb-0"
             key={plan.id}
         >
             <CardHeader>
@@ -102,6 +101,7 @@ const PricingPage = async () => {
         </Card>
     ))}
 </div>
+
 
 
         
