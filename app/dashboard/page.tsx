@@ -4,26 +4,19 @@ import React from "react";
 import SubscriptionManagementButton from "@/components/checkout/SubscriptionManagementButton";
 import { supabaseServer } from "@/utils/supabaseServer";
 
-// プロフィールデータを取得する関数
 const getProfileData = async (supabase: SupabaseClient<Database>) => {
-    const { data: profile, error } = await supabase
+    const { data: profile } = await supabase
         .from("profile")
         .select("*")
         .single();
-
-    if (error) {
-        console.error("Failed to fetch profile data:", error.message);
-        return null;
-    }
-    
     return profile;
+
 };
 
+
 const Dashboard = async () => {
-    // supabaseサーバークライアントの初期化
     const supabase = supabaseServer();
     const profile = await getProfileData(supabase);
-
     return (
         <div className="w-full max-w-3xl mx-auto py-16 px-8 text-center">
             <h1 className=" text-center text-3xl mb-6">MTech管理ダッシュボード</h1>
@@ -51,9 +44,9 @@ const Dashboard = async () => {
                     </span>
                 </p>
             </div>
-            
+
+
         </div>
     );
 };
-
 export default Dashboard;
