@@ -25,8 +25,9 @@ const Dashboard = async () => {
                     {profile?.is_subscribed
                         ? `プラン契約中です。: ${profile.interval} プラン`
                         : "プラン未加入です。"}
+
+                    <SubscriptionManagementButton />
                 </div>
-                <SubscriptionManagementButton />
                 <p className="text-center p-4 bg-white mt-6 rounded-lg shadow-md space-y-3">
                     <span className="text-gray-700">
                         ITスクールの会員の方は
