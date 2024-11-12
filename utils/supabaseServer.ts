@@ -6,3 +6,5 @@ export const  supabaseServer =()=>{
     cookies().getAll();
     return createServerComponentClient<Database>({cookies});
 }
+
+
