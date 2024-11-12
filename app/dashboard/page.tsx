@@ -26,10 +26,7 @@ const Dashboard = async () => {
                         ? `プラン契約中です。: ${profile.interval} プラン`
                         : "プラン未加入です。"}
                 </div>
-                <p className="text-center p-3 bg-white mt-6 mb-6 rounded-lg  shadow-lg">
-                    公式ラインお問い合わせは<a href="https://line.me/R/ti/p/@527qtybu?oat_content=url&ts=08060343" className=" mb-6text-red-500">こちら</a>から
-                    <SubscriptionManagementButton />
-                </p>
+                <SubscriptionManagementButton />
                 <p className="text-center p-4 bg-white mt-6 rounded-lg shadow-md space-y-3">
                     <span className="text-gray-700">
                         ITスクールの会員の方は
@@ -38,7 +35,13 @@ const Dashboard = async () => {
                         </a>
                         から
                     </span>
-                    <SubscriptionManagementButton />
+                    <span className="text-gray-700">
+                        公式ラインお問い合わせは
+                        <a href="https://line.me/R/ti/p/@527qtybu?oat_content=url&ts=08060343" className="text-red-500 hover:underline ml-1">
+                            こちら
+                        </a>
+                        から
+                    </span>
                 </p>
             </div>
 
