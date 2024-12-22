@@ -73,7 +73,7 @@ const Header = async () => {
                     <Button variant="outline" className="mt-2 w-full">コース一覧</Button>
                 </Link>
                 <Link href="https://mtech-it.com">
-                    <Button variant="outline" className="mt-2 w-full">Mtechコミュニティー</Button>
+                    <Button variant="outline" className="mt-2 w-full">Mtech</Button>
                 </Link>
                 <div className="mt-2">
                     <AuthServerButton />
@@ -91,7 +91,7 @@ const Header = async () => {
                     <Button variant="outline">コース一覧</Button>
                 </Link>
                 <Link href="https://mtech-it.com" className="ml-4">
-                    <Button variant="outline">Mtechコミュニティー</Button>
+                    <Button variant="outline">Mtech</Button>
                 </Link>
                 <div className="ml-4">
                     <AuthServerButton />

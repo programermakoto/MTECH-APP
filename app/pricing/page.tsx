@@ -81,10 +81,7 @@ const PricingPage = async () => {
                 <div className="text-gray-700 text-sm leading-relaxed mt-2">
                     <ul className="list-disc text-left">
                         <li>完全紹介制オフラインコミュニティー</li>
-                        <li>フリーランス案件紹介</li>
-                        <li>転職サポート</li>
-                        <li>フリーランス案件紹介</li>
-                        <li>チーム開発サポート</li>
+                        <li>プログラミング以外のスキルもサポート</li>
                         <li>公式ラインでの質問サポート</li>
                     </ul>
                 </div>
